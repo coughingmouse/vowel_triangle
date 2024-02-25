@@ -110,20 +110,17 @@ window.onload = function() {
   var drag = false;
   var dragStart;
   var dragEnd;
-  canvas.addEventListener('mousedown', function(event) {
+  canvas.addEventListener('pointerdown', function(event) {
     dragStart = {
       x: event.pageX - canvas.offsetLeft,
       y: event.pageY - canvas.offsetTop
     }
     drag = true;
-
   })
-
-  canvas.addEventListener('mouseup', function(event) {
+  canvas.addEventListener('pointerup', function(event) {
     drag = false;
-
   })
-  canvas.addEventListener('mousemove', function(event) {
+  canvas.addEventListener('pointermove', function(event) {
     if (drag) {
       dragEnd = {
         x: event.pageX - canvas.offsetLeft,
