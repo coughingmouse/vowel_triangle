@@ -83,17 +83,12 @@ function usevideo() {
 
 function usemic() {
   if(!selected_mic){
-    getUserMedia({audio: true}, micSuccess, micFailure);
+    navigator.mediaDevices.getUserMedia({audio: true})
+      .then(micSuccess)
+      .catch(micFailure);
     selected_mic = true;
   }
 };
-
-function getUserMedia() {
-  console.log(navigator.mediaDevices.getUserMedia);
-  console.log(navigator.mozGetUserMedia);
-  (navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia
-          || function(){alert('getUserMedia missing')}).apply(navigator, arguments);
-}
 
 function micSuccess(stream) {
   var worm = new window.VowelWorm.instance(stream);
@@ -106,7 +101,8 @@ function micFailure() {
 
 // my code here ///////////////////////////
 window.onload = function() {
-  var canvas = document.getElementById("wrapper").getElementsByTagName('canvas')[0];
+  var canvas = document.getElementById("wrapper")
+    .getElementsByTagName('canvas')[0];
   var drag = false;
   var dragStart;
   var dragEnd;
