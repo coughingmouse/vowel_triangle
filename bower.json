@@ -1,7 +1,7 @@
 {
-  "name": "apeworm",
+  "name": "vowel_triangle",
   "version": "0.0.2",
-  "homepage": "https://byu-odh.github.io/apeworm",
+  "homepage": "https://coughingmouse.github.io/vowel_triangle",
   "authors": [
     "Office of Digital Humanities, BYU"
   ],
@@ -9,7 +9,7 @@
   "main": "src/vowelworm.js",
   "keywords": [
     "vowelworm",
-    "apeworm",
+    "vowel_triangle",
     "vowel",
     "recognition",
     "mfcc",

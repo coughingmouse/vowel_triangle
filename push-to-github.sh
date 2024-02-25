@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "BYU-ODH/apeworm" ] && [ "$TRAVIS_TAG" != "" ]; then
-    echo "Commit made to BYU-ODH/apeworm, is not a pull request and has a tag"
+if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "coughingmouse/vowel_triangle" ] && [ "$TRAVIS_TAG" != "" ]; then
+    echo "Commit made to coughingmouse/vowel_triangle, is not a pull request and has a tag"
     echo "Pushing master branch to gh-pages."
     
     cp ./travis-ssh ~/.ssh/id_rsa
@@ -10,7 +10,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "BYU-ODH/ap
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "travis-ci"
 
-    git remote add github git@github.com:BYU-ODH/apeworm.git
+    git remote add github git@github.com:coughingmouse/vowel_triangle.git
 
     git checkout -b gh-pages
     git add -f doc

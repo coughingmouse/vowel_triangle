@@ -116,10 +116,10 @@ $ python windowing.py --fft=./path/to/fft-spectrum.txt --lpc=./path/to/lpc-spect
 
 Sample data is used if `python windowing.py` is called without both the FFT and LPC arguments.
 
-[build-status-image]: https://travis-ci.org/BYU-ODH/apeworm.svg
-[build-status-url]: https://travis-ci.org/BYU-ODH/apeworm
-[sources-url]: https://byu-odh.github.io/apeworm/examples/sources.html
-[draw-url]: https://byu-odh.github.io/apeworm/examples/chart.html
+[build-status-image]: https://travis-ci.org/coughingmouse/vowel_triangle.svg
+[build-status-url]: https://travis-ci.org/coughingmouse/vowel_triangle
+[sources-url]: https://coughingmouse.github.io/vowel_triangle/examples/sources.html
+[draw-url]: https://coughingmouse.github.io/vowel_triangle/examples/chart.html
 [chart-image]: examples/img/draw.png?raw=true
 [multiple-image]: examples/img/multiple.png?raw=true
-[docs-url]: https://byu-odh.github.io/apeworm/doc
+[docs-url]: https://coughingmouse.github.io/vowel_triangle/doc

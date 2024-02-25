@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         src: 'README.html',
         dest: 'README.html',
         replacements: [{
-          from: 'https://byu-odh.github.io/apeworm/',
+          from: 'https://coughingmouse.github.io/vowel_triangle/',
           to: ''
         }]
       }
