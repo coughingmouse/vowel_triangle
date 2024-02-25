@@ -89,6 +89,8 @@ function usemic() {
 };
 
 function getUserMedia() {
+  console.log(navigator.mediaDevices.getUserMedia);
+  console.log(navigator.mozGetUserMedia);
   (navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia
           || function(){alert('getUserMedia missing')}).apply(navigator, arguments);
 }
@@ -101,3 +103,38 @@ function micSuccess(stream) {
 function micFailure() {
   alert("Could not capture microphone input");
 };
+
+// my code here ///////////////////////////
+window.onload = function() {
+  var canvas = document.getElementById("wrapper").getElementsByTagName('canvas')[0];
+  var drag = false;
+  var dragStart;
+  var dragEnd;
+  canvas.addEventListener('mousedown', function(event) {
+    dragStart = {
+      x: event.pageX - canvas.offsetLeft,
+      y: event.pageY - canvas.offsetTop
+    }
+    drag = true;
+
+  })
+
+  canvas.addEventListener('mouseup', function(event) {
+    drag = false;
+
+  })
+  canvas.addEventListener('mousemove', function(event) {
+    if (drag) {
+      dragEnd = {
+        x: event.pageX - canvas.offsetLeft,
+        y: event.pageY - canvas.offsetTop
+      }
+      window.game.move(dragEnd.x - dragStart.x, dragEnd.y - dragStart.y);
+      dragStart = dragEnd;
+    }
+
+  })
+
+}
+
+////////////////////////////////
