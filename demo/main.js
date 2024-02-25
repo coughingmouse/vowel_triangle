@@ -1,4 +1,4 @@
-if ((window.location.host == "byu-odh.github.io") && (window.location.protocol != "https:"))
+if ((window.location.host == "coughingmouse.github.io") && (window.location.protocol != "https:"))
   window.location.protocol = "https";
 
 var selected_mic = false;
