@@ -90,8 +90,8 @@ window.VowelWorm.Game = function( options ) {
           if(coords!==null){
               var doRender = true;
 
-              var x = coords.x;
-              var y = coords.y;
+              var x = coords.x - 150;
+              var y = coords.y + 60;
 
               var circle = new PIXI.Sprite.fromImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZBAMAAAA2x5hQAAAAJ1BMVEUAAAD///////////////// //////////////////////////////+uPUo5AAAADHRSTlMAB+jh0bmoiU41HivIpyZzAAAAeklE QVQY02MAAsbpQYfCJwIZYE7LGSA40gjhLTsDBscWgDjcNmcgwBrEW3wGCg4DJRlzzsBAIgMDxxk4 OMHAIILgHRFgmHMGASYw1CDxChhikHgBDDpIPAWGM0jgAKocqj5UM1HtQ3ULijtR/YDqPwy/I8IF PcxQwxMAviHDkWPqCWAAAAAASUVORK5CYII=");
               circle.position.x = x;
@@ -238,22 +238,26 @@ window.VowelWorm.Game = function( options ) {
   var drawVowels = function() {
       if(!ipaChart.children.length) {
           var letters = [
-              ["e",221.28871891963863,252.35519027188354],
-              ["i",169.01833799969594,171.97765003235634],
-              ["a",317.6219414250667,337.00896411883406],
-              ["o",384.5714404194302,284.96641792056766],
-              ["u",412.17314090483404,231.94657762575406]
+            ["\u0289",289.01833799969594,81.97765003235634],
+            ["\u026A",86.28871891963863,222.35519027188354],
+            ["e",56.28871891963863,302.35519027188354],
+            ["\u00E6",56.28871891963863,522.35519027188354],
+            ["i",100,80],
+            ["a",367.6219414250667,497.00896411883406],
+            ["u",572.17314090483404,81.94657762575406],
+            ["\u028c",634.5714404194302,344.96641792056766],
+            ["o",722.17314090483404,181.94657762575406]
           ];
-          var chart = new PIXI.Sprite.fromImage("plot2.png");
-          chart.position.x = 0 + game.margin;
-          chart.position.y = 0 + game.margin;
-          ipaChart.addChild(chart);
-          // for(var i=0; i<letters.length; i++){
-          //   var letter = new PIXI.Text(letters[i][0],{font: "35px sans-serif", fill: "black", align: "center"});
-          //   letter.position.x = letters[i][1];
-          //   letter.position.y = letters[i][2];
-          //   ipaChart.addChild(letter);
-          // }
+          // var chart = new PIXI.Sprite.fromImage("plot2.png");
+          // chart.position.x = 0 + game.margin;
+          // chart.position.y = 0 + game.margin;
+          // ipaChart.addChild(chart);
+          for(var i=0; i<letters.length; i++){
+            var letter = new PIXI.Text(letters[i][0],{font: "35px sans-serif", fill: "black", align: "center"});
+            letter.position.x = letters[i][1];
+            letter.position.y = letters[i][2];
+            ipaChart.addChild(letter);
+          }
       }
   };
 

@@ -866,7 +866,7 @@
             delete instance[name];
         });
     };
-    /**
+    /** 
      * Callback used by {@link VowelWorm.module}
      * @callback VowelWorm~createModule
      * @param {VowelWorm.instance.prototype} prototype
