@@ -91,8 +91,8 @@ window.VowelWorm.Game = function( options ) {
         if(coords!==null){
             var doRender = true;
 
-            var x = (coords.x) * 2 / 3 * (edge / 600);
-            var y = coords.y + 60 * (edge / 600);
+            var x = (coords.x) * (edge / 900) + 100;
+            var y = (coords.y) * (edge / 600) + 60;
 
             var circle = new PIXI.Sprite.fromImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZBAMAAAA2x5hQAAAAJ1BMVEUAAAD///////////////// //////////////////////////////+uPUo5AAAADHRSTlMAB+jh0bmoiU41HivIpyZzAAAAeklE QVQY02MAAsbpQYfCJwIZYE7LGSA40gjhLTsDBscWgDjcNmcgwBrEW3wGCg4DJRlzzsBAIgMDxxk4 OMHAIILgHRFgmHMGASYw1CDxChhikHgBDDpIPAWGM0jgAKocqj5UM1HtQ3ULijtR/YDqPwy/I8IF PcxQwxMAviHDkWPqCWAAAAAASUVORK5CYII=");
             circle.position.x = x;
@@ -239,20 +239,20 @@ window.VowelWorm.Game = function( options ) {
   var drawVowels = function() {
       if(!ipaChart.children.length) {
           var letters = [
-            [".",60 * (edge / 600),500 * (edge / 600)],
-            ["A(e)",320 * (edge / 600),440 * (edge / 600)],
-            ["E",110 * (edge / 600),260 * (edge / 600)],
-            ["I",210 * (edge / 600),40 * (edge / 600)],
-            ["O",530 * (edge / 600),295 * (edge / 600)],
-            ["U(o)",480 * (edge / 600),60 * (edge / 600)],
+            // [".",60 * (edge / 600),500 * (edge / 600)],
+            // ["A",320 * (edge / 600),400 * (edge / 600)],
+            // ["E",110 * (edge / 600),260 * (edge / 600)],
+            // ["I",210 * (edge / 600),40 * (edge / 600)],
+            // ["O",530 * (edge / 600),295 * (edge / 600)],
+            // ["U",480 * (edge / 600),60 * (edge / 600)],
           ];
           var korean_letters = [
-            ["a",220 * (edge / 600),480 * (edge / 600)],
-            ["é",130 * (edge / 600),290 * (edge / 600)],
-            ["i",60 * (edge / 600),100 * (edge / 600)],
-            ["e/o",320 * (edge / 600),295 * (edge / 600)],
-            ["u",200 * (edge / 600),180 * (edge / 600)],
-            ["wu",250 * (edge / 600),130 * (edge / 600)],
+            ["a",280 * (edge / 600),400 * (edge / 600)],
+            ["é",170 * (edge / 600),260 * (edge / 600)],
+            ["u",270 * (edge / 600),190 * (edge / 600)],
+            ["e",430 * (edge / 600),310 * (edge / 600)],
+            ["w",380 * (edge / 600),130 * (edge / 600)],
+            ["i",200 * (edge / 600),80 * (edge / 600)],
           ];
           // var chart = new PIXI.Sprite.fromImage("plot2.png");
           // chart.position.x = 0 + game.margin;

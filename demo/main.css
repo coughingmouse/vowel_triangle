@@ -1,6 +1,6 @@
 h1{
   font-family: 'Open Sans', sans-serif;
-  margin-top: 0;  
+  margin-top: 1em;  
   margin-bottom: 0;  
   text-align: center;
 }
@@ -49,8 +49,10 @@ body{
   margin: 0;
   background-color: lightblue;
   color: rgb(49, 58, 61);
-  width: 100vw;
-  height: 100vh;
+  width: Math.max(100vw,100%);
+  height: Math.max(100vh,100%);
+  margin: 0;
+  padding: 0;
 }
 
 #buttons {
@@ -58,14 +60,11 @@ body{
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  padding: 0;
-  margin-top: 1em;
-  margin-bottom: 1em;
   text-align: center;
 }
 
 #buttons button {
-  width: 75px;
+  width: 50px;
   height: 50px;
   background-color: rgb(49, 58, 61);
   border-radius: 50px;
