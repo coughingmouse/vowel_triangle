@@ -12,34 +12,43 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <link href='demo/main.css' rel=stylesheet type=text/css>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
-<head></head>
-<body>
+<head>
 <title>Vowel Triangle</title>
-<!-- GITHUB BANNER -->
-<a class="github-fork-ribbon" href="https://github.com/coughingmouse/vowel_triangle" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
-<!-- END GITHUB BANNER -->
-<h1>Vowel Triangle</h1>
+</head>
+<body>
+  <!-- GITHUB BANNER -->
+  <a class="github-fork-ribbon" href="https://github.com/coughingmouse/vowel_triangle" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+  <!-- END GITHUB BANNER -->
+  <div>
+    &nbsp;
+    <h1>Vowel Triangle</h1>
+    <div id="text-flexbox">
+      <div id='text-wrapper'>
+        <p>The Vowel Triangle can plot vowel features on a canvas in real-time. It is based on
+        the work done at the <a href="http://www.cp.jku.at/projects/realtime/vowelworm.html">
+        Department of Computational Perception at Johannes Kepler Universität Linz</a>.</p>
+      </div>
+    </div>
 
-<p>The Vowel Triangle can plot vowel features on a canvas in real-time. It is based on
-the work done at the <a href="http://www.cp.jku.at/projects/realtime/vowelworm.html">
-Department of Computational Perception at Johannes Kepler Universität Linz</a>.</p>
+      <nav>
+        <a class=big-button href='https://github.com/coughingmouse/vowel_triangle/'>Download the Code</a>
+      </nav>
+      <br>
+    <div id=buttons>
+      <button class="fa fa-play" id=media_button alt="Play Audio" title="Play/Pause Audio"></button>
+      <button id=mic_button class="fa fa-microphone"></button>
+    </div>
 
-<nav>
-  <a class=big-button href='https://github.com/coughingmouse/vowel_triangle/'>Download the Code</a>
-</nav>
-<br>
-<div id=buttons>
-  <button class="fa fa-play" id=media_button alt="Play Audio" title="Play/Pause Audio"></button>
-  <button id=mic_button class="fa fa-microphone"></button>
-</div>
-<div id='wrapper'></div>
+    <div id='wrapper'>
+    </div>
+  </div>
 
-<audio style='display:none' class=media src="examples/audio/vowels.wav"></audio>
-<audio style='display:none' class=media src="examples/audio/vowels_pono.wav"></audio>
-<audio style='display:none' class=media src="examples/audio/vowels_ryan.wav"></audio>
-<audio style='display:none' class=media src="examples/audio/vowels_ian.wav"></audio>
-<audio style='display:none' class=media src="examples/audio/vowels_rochelle.wav"></audio>
-<audio style='display:none' class=media src="examples/audio/vowels_derrick.wav"></audio>
-<script src='demo/main.js'></script>
+  <audio style='display:none' class=media src="examples/audio/vowels.wav"></audio>
+  <audio style='display:none' class=media src="examples/audio/vowels_pono.wav"></audio>
+  <audio style='display:none' class=media src="examples/audio/vowels_ryan.wav"></audio>
+  <audio style='display:none' class=media src="examples/audio/vowels_ian.wav"></audio>
+  <audio style='display:none' class=media src="examples/audio/vowels_rochelle.wav"></audio>
+  <audio style='display:none' class=media src="examples/audio/vowels_derrick.wav"></audio>
+  <script src='demo/main.js'></script>
 
 </body>

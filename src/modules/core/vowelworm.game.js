@@ -13,8 +13,9 @@ window.VowelWorm.Game = function( options ) {
   "use strict";
 
   var game = this;
-  game.width = options.width || 700;
-  game.height = options.height || 500;
+  var edge = Math.min(window.innerWidth, window.innerHeight, document.getElementById("text-wrapper").offsetWidth) - 20;
+  game.width = options.width || edge; //600
+  game.height = options.height || edge; //600
   game.margin = 0;
 
   game.x1 = 0;
@@ -80,33 +81,33 @@ window.VowelWorm.Game = function( options ) {
    * @private
    */
   game.drawWorm = function(){
-      var current_color = 0x00FF00;
-      worms.forEach(function(container) {
-          var worm = container.worm,
-              circles = container.circles;
+    var current_color = 0x00FF00;
+    worms.forEach(function(container) {
+        var worm = container.worm,
+            circles = container.circles;
 
-          var coords = getCoords(worm);
+        var coords = getCoords(worm);
 
-          if(coords!==null){
-              var doRender = true;
+        if(coords!==null){
+            var doRender = true;
 
-              var x = (coords.x) * 2 / 3;
-              var y = coords.y + 60;
+            var x = (coords.x) * 2 / 3 * (edge / 600);
+            var y = coords.y + 60 * (edge / 600);
 
-              var circle = new PIXI.Sprite.fromImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZBAMAAAA2x5hQAAAAJ1BMVEUAAAD///////////////// //////////////////////////////+uPUo5AAAADHRSTlMAB+jh0bmoiU41HivIpyZzAAAAeklE QVQY02MAAsbpQYfCJwIZYE7LGSA40gjhLTsDBscWgDjcNmcgwBrEW3wGCg4DJRlzzsBAIgMDxxk4 OMHAIILgHRFgmHMGASYw1CDxChhikHgBDDpIPAWGM0jgAKocqj5UM1HtQ3ULijtR/YDqPwy/I8IF PcxQwxMAviHDkWPqCWAAAAAASUVORK5CYII=");
-              circle.position.x = x;
-              circle.position.y = y;
-              circle.tint = current_color;
-              circle.scale = new PIXI.Point(.8,.8);
+            var circle = new PIXI.Sprite.fromImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZBAMAAAA2x5hQAAAAJ1BMVEUAAAD///////////////// //////////////////////////////+uPUo5AAAADHRSTlMAB+jh0bmoiU41HivIpyZzAAAAeklE QVQY02MAAsbpQYfCJwIZYE7LGSA40gjhLTsDBscWgDjcNmcgwBrEW3wGCg4DJRlzzsBAIgMDxxk4 OMHAIILgHRFgmHMGASYw1CDxChhikHgBDDpIPAWGM0jgAKocqj5UM1HtQ3ULijtR/YDqPwy/I8IF PcxQwxMAviHDkWPqCWAAAAAASUVORK5CYII=");
+            circle.position.x = x;
+            circle.position.y = y;
+            circle.tint = current_color;
+            circle.scale = new PIXI.Point(.8,.8);
 
-              circles.push(circle);
+            circles.push(circle);
 
-              game._stage.addChild(circle);
-          }
-          current_color = getNextColor(current_color);
-      });
-      fadeOldCircles();
-      game._renderer.render(game._stage);
+            game._stage.addChild(circle);
+        }
+        current_color = getNextColor(current_color);
+    });
+    fadeOldCircles();
+    game._renderer.render(game._stage);
   };
 
   Object.defineProperties(game, {
@@ -238,23 +239,20 @@ window.VowelWorm.Game = function( options ) {
   var drawVowels = function() {
       if(!ipaChart.children.length) {
           var letters = [
-            // ["A",340,480],
-            ["A",320,440],
-            ["E",110,260],
-            ["I",210,40],
-            ["O",530,295],
-            ["U",480,60],
-            // ["\u0289",227,40],
-            // ["\u026A",187,180],
-            // ["e",80,260],
-            // ["\u00E6?",170,480],
-            // ["\u00E6",190,360],
-            // ["i",210,50],
-            // ["\u026F",360,160],
-            // ["a",390,460],
-            // ["\u028c",520,280],
-            // ["a vOwel",470,410],
-            // ["o",610,140]
+            [".",60 * (edge / 600),500 * (edge / 600)],
+            ["A(e)",320 * (edge / 600),440 * (edge / 600)],
+            ["E",110 * (edge / 600),260 * (edge / 600)],
+            ["I",210 * (edge / 600),40 * (edge / 600)],
+            ["O",530 * (edge / 600),295 * (edge / 600)],
+            ["U(o)",480 * (edge / 600),60 * (edge / 600)],
+          ];
+          var korean_letters = [
+            ["a",220 * (edge / 600),480 * (edge / 600)],
+            ["é",130 * (edge / 600),290 * (edge / 600)],
+            ["i",60 * (edge / 600),100 * (edge / 600)],
+            ["e/o",320 * (edge / 600),295 * (edge / 600)],
+            ["u",200 * (edge / 600),180 * (edge / 600)],
+            ["wu",250 * (edge / 600),130 * (edge / 600)],
           ];
           // var chart = new PIXI.Sprite.fromImage("plot2.png");
           // chart.position.x = 0 + game.margin;
@@ -264,6 +262,12 @@ window.VowelWorm.Game = function( options ) {
             var letter = new PIXI.Text(letters[i][0],{font: "35px sans-serif", fill: "black", align: "center"});
             letter.position.x = letters[i][1];
             letter.position.y = letters[i][2];
+            ipaChart.addChild(letter);
+          }
+          for(var i=0; i<korean_letters.length; i++){
+            var letter = new PIXI.Text(korean_letters[i][0],{font: "35px sans-serif", fill: "red", align: "center"});
+            letter.position.x = korean_letters[i][1];
+            letter.position.y = korean_letters[i][2];
             ipaChart.addChild(letter);
           }
       }

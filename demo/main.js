@@ -128,6 +128,10 @@ window.onload = function() {
 
   })
 
+  var len = Math.min(window.innerWidth, window.innerHeight);
+  var canvas = document.getElementsByTagName("canvas")[0];
+  gl = canvas.getContext("webgl");
 }
+
 
 ////////////////////////////////
