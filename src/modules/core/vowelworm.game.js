@@ -15,7 +15,7 @@ window.VowelWorm.Game = function( options ) {
   var game = this;
   game.width = options.width || 700;
   game.height = options.height || 500;
-  game.margin = 50;
+  game.margin = 0;
 
   game.x1 = 0;
   game.x2 = 4.0;
@@ -90,7 +90,7 @@ window.VowelWorm.Game = function( options ) {
           if(coords!==null){
               var doRender = true;
 
-              var x = coords.x - 150;
+              var x = (coords.x) * 2 / 3;
               var y = coords.y + 60;
 
               var circle = new PIXI.Sprite.fromImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZBAMAAAA2x5hQAAAAJ1BMVEUAAAD///////////////// //////////////////////////////+uPUo5AAAADHRSTlMAB+jh0bmoiU41HivIpyZzAAAAeklE QVQY02MAAsbpQYfCJwIZYE7LGSA40gjhLTsDBscWgDjcNmcgwBrEW3wGCg4DJRlzzsBAIgMDxxk4 OMHAIILgHRFgmHMGASYw1CDxChhikHgBDDpIPAWGM0jgAKocqj5UM1HtQ3ULijtR/YDqPwy/I8IF PcxQwxMAviHDkWPqCWAAAAAASUVORK5CYII=");
@@ -238,15 +238,23 @@ window.VowelWorm.Game = function( options ) {
   var drawVowels = function() {
       if(!ipaChart.children.length) {
           var letters = [
-            ["\u0289",289.01833799969594,81.97765003235634],
-            ["\u026A",86.28871891963863,222.35519027188354],
-            ["e",56.28871891963863,302.35519027188354],
-            ["\u00E6",56.28871891963863,522.35519027188354],
-            ["i",100,80],
-            ["a",367.6219414250667,497.00896411883406],
-            ["u",572.17314090483404,81.94657762575406],
-            ["\u028c",634.5714404194302,344.96641792056766],
-            ["o",722.17314090483404,181.94657762575406]
+            // ["A",340,480],
+            ["A",320,440],
+            ["E",110,260],
+            ["I",210,40],
+            ["O",530,295],
+            ["U",480,60],
+            // ["\u0289",227,40],
+            // ["\u026A",187,180],
+            // ["e",80,260],
+            // ["\u00E6?",170,480],
+            // ["\u00E6",190,360],
+            // ["i",210,50],
+            // ["\u026F",360,160],
+            // ["a",390,460],
+            // ["\u028c",520,280],
+            // ["a vOwel",470,410],
+            // ["o",610,140]
           ];
           // var chart = new PIXI.Sprite.fromImage("plot2.png");
           // chart.position.x = 0 + game.margin;

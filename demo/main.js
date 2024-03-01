@@ -71,7 +71,7 @@ function usemedia() {
     var worm = new window.VowelWorm.instance(audio);
     worms.push(worm);
     game.addWorm(worm);
-  }
+  }i
   started = true;
 }
 
