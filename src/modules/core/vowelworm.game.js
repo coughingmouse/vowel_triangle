@@ -239,12 +239,12 @@ window.VowelWorm.Game = function( options ) {
   var drawVowels = function() {
       if(!ipaChart.children.length) {
           var letters = [
-            // [".",60 * (edge / 600),500 * (edge / 600)],
-            // ["A",320 * (edge / 600),400 * (edge / 600)],
-            // ["E",110 * (edge / 600),260 * (edge / 600)],
-            // ["I",210 * (edge / 600),40 * (edge / 600)],
-            // ["O",530 * (edge / 600),295 * (edge / 600)],
-            // ["U",480 * (edge / 600),60 * (edge / 600)],
+            [".",60 * (edge / 600),500 * (edge / 600)],
+            ["A",310 * (edge / 600),400 * (edge / 600)],
+            ["E",110 * (edge / 600),260 * (edge / 600)],
+            ["I",210 * (edge / 600),40 * (edge / 600)],
+            ["O",530 * (edge / 600),295 * (edge / 600)],
+            ["U",480 * (edge / 600),60 * (edge / 600)],
           ];
           var korean_letters = [
             ["a",280 * (edge / 600),400 * (edge / 600)],
@@ -265,7 +265,7 @@ window.VowelWorm.Game = function( options ) {
             ipaChart.addChild(letter);
           }
           for(var i=0; i<korean_letters.length; i++){
-            var letter = new PIXI.Text(korean_letters[i][0],{font: "35px sans-serif", fill: "red", align: "center"});
+            var letter = new PIXI.Text(korean_letters[i][0],{font: "35px sans-serif", fill: "#3863c9", align: "center"});
             letter.position.x = korean_letters[i][1];
             letter.position.y = korean_letters[i][2];
             ipaChart.addChild(letter);
